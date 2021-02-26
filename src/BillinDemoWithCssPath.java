@@ -14,13 +14,16 @@ public class BillinDemoWithCssPath {
         driver.manage().window().maximize();
         driver.get("https://billing.scriptinglogic.net/");
 
-        WebElement txtUsername = driver.findElement(By.id("email"));
+        //WebElement txtUsername = driver.findElement(By.cssSelector("input#email"));
+        WebElement txtUsername = driver.findElement(By.cssSelector("#email"));
         txtUsername.sendKeys("amolujagare@gmail.com");
 
-        WebElement txtPassword = driver.findElement(By.id("password"));
+       // WebElement txtPassword = driver.findElement(By.cssSelector("input#password "));
+        WebElement txtPassword = driver.findElement(By.cssSelector("#password"));
         txtPassword.sendKeys("admin123");
 
-        WebElement btnLogin = driver.findElement(By.name("btn_login"));
+       // WebElement btnLogin = driver.findElement(By.cssSelector("input.btn"));
+        WebElement btnLogin = driver.findElement(By.cssSelector(".btn"));
         btnLogin.click();
     }
 }
