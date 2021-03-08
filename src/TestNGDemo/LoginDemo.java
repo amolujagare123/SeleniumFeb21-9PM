@@ -1,14 +1,13 @@
-package JunitExamples;
+package TestNGDemo;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
-public class JunitDemo {
+public class LoginDemo {
 
     @Test
     public void logintest1()
@@ -26,16 +25,7 @@ public class JunitDemo {
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
         btnLogin.click();
-
-        String expected = "POSNIC - Dashboard";
-
-        String actual = driver.getTitle();
-
-
-        Assert.assertEquals("we are not on the dashboard",expected,actual);
-
     }
-
 
     @Test
     public void logintest2()
@@ -46,15 +36,14 @@ public class JunitDemo {
         driver.get("https://stock.scriptinglogic.net/");
 
         WebElement txtUsername  = driver.findElement(By.id("login-username"));
-        txtUsername.sendKeys("dfdf");
+        txtUsername.sendKeys("tyty");
 
         WebElement  txtPassword = driver.findElement(By.id("login-password"));
-        txtPassword.sendKeys("dfdfdf");
+        txtPassword.sendKeys("yty");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
         btnLogin.click();
     }
-
 
     @Test
     public void logintest3()

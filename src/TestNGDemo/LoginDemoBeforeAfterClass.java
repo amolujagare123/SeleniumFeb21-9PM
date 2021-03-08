@@ -1,21 +1,35 @@
-package JunitExamples;
+package TestNGDemo;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 
-public class JunitDemo {
+public class LoginDemoBeforeAfterClass {
+    WebDriver driver;
+
+    @BeforeClass // this method runs before first test method
+    public void openBrowser()
+    {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+
+    @AfterClass // this method runs after last test method
+    public void closeBrowser() throws InterruptedException {
+
+        Thread.sleep(3000);
+        driver.close();
+    }
 
     @Test
     public void logintest1()
     {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
         driver.get("https://stock.scriptinglogic.net/");
 
         WebElement txtUsername  = driver.findElement(By.id("login-username"));
@@ -25,43 +39,29 @@ public class JunitDemo {
         txtPassword.sendKeys("admin");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
-
-        String expected = "POSNIC - Dashboard";
-
-        String actual = driver.getTitle();
-
-
-        Assert.assertEquals("we are not on the dashboard",expected,actual);
-
+     //   btnLogin.click();
     }
-
 
     @Test
     public void logintest2()
     {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
         driver.get("https://stock.scriptinglogic.net/");
 
         WebElement txtUsername  = driver.findElement(By.id("login-username"));
-        txtUsername.sendKeys("dfdf");
+        txtUsername.sendKeys("tyty");
 
         WebElement  txtPassword = driver.findElement(By.id("login-password"));
-        txtPassword.sendKeys("dfdfdf");
+        txtPassword.sendKeys("yty");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
+    //    btnLogin.click();
     }
-
 
     @Test
     public void logintest3()
     {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
         driver.get("https://stock.scriptinglogic.net/");
 
         WebElement txtUsername  = driver.findElement(By.id("login-username"));
@@ -71,6 +71,6 @@ public class JunitDemo {
         txtPassword.sendKeys("");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
+      //  btnLogin.click();
     }
 }
