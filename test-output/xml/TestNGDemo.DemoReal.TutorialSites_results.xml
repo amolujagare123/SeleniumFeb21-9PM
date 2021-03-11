@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="All tutorials"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="24.083">
+  <properties />
+  
+  
+            <testcase name="scriptinglogic" time="13.287" classname="TestNGDemo.DemoReal.TutorialSites" />
+                <testcase name="javatpoint" time="3.610" classname="TestNGDemo.DemoReal.TutorialSites" />
+                <testcase name="geeksforgeeks" time="7.186" classname="TestNGDemo.DemoReal.TutorialSites" />
+      
+</testsuite>

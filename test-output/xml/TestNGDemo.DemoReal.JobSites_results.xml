@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="social and job"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="27.820">
+  <properties />
+  
+  
+            <testcase name="shine" time="4.670" classname="TestNGDemo.DemoReal.JobSites" />
+                <testcase name="naukri" time="7.406" classname="TestNGDemo.DemoReal.JobSites" />
+                <testcase name="monster" time="15.744" classname="TestNGDemo.DemoReal.JobSites" />
+      
+</testsuite>
