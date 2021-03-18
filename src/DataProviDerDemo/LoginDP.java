@@ -32,7 +32,7 @@ public class LoginDP {
     @DataProvider
     public Object[][] getData()
     {
-        // rows x colums
+        // rows x columns
         Object[][] data = new Object[4][2];
 
         data[0][0] = "admin"; // username
